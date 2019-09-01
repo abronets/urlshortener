@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Site</title>
+</head>
+<body>
+<form method="post">
+    {{ form.as_p }}
+    {% csrf_token %}
+    <button type="submit">Submit</button>
+    <br>
+    <br>
+    {% for url in urls %}
+    <p><a href = '{{ url.long_url }}' >{{ url.long_url }} </a> -->> <a href = '{{ url.short_url }}' >{{ url.short_url }} </a></p>
+    {% endfor %}
+    <br>
+</form>
+
+</body>
+</html>
